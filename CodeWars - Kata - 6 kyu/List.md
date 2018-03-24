@@ -1,5 +1,5 @@
 List of my 6 kyu kata:
-- [Multiples of 3 or 5]()
+- [Multiples of 3 or 5](#multiples-of-3-or-5)
 
 
 ### Multiples of 3 or 5

@@ -3,6 +3,8 @@ List of my 6 kyu kata:
 - [Find the unique number](#find-the-unique-number)
 - [Tribonacci Sequence](#tribonacci-sequence)
 - [Who likes it](#who-likes-it)
+- [Bit counting](#bit-counting)
+
 
 
 ### Multiples of 3 or 5
@@ -126,4 +128,16 @@ function likes(names) {
 
 ```
 
+### Bit counting
 
+Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
+
+Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+
+```javascript
+
+var countBits = function(n) {
+  return n.toString(2).split("").filter(a => a !=="0").length;
+};
+
+```

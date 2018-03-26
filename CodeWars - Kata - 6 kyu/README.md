@@ -2,7 +2,7 @@ List of my 6 kyu kata:
 - [Multiples of 3 or 5](#multiples-of-3-or-5)
 - [Find the unique number](#find-the-unique-number)
 - [Tribonacci Sequence](#tribonacci-sequence)
-- [Who likes it?](#who-likes-it?)
+- [Who likes it](#who-likes-it)
 
 
 ### Multiples of 3 or 5
@@ -86,7 +86,7 @@ function tribonacci(signature,n){
 }
 
 ```
-### Who likes it?
+### Who likes it
 
 [Kata URL](https://www.codewars.com/kata/who-likes-it/train/javascript)
 

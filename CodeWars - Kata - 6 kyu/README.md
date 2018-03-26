@@ -4,6 +4,7 @@ List of my 6 kyu kata:
 - [Tribonacci Sequence](#tribonacci-sequence)
 - [Who likes it](#who-likes-it)
 - [Bit counting](#bit-counting)
+- [Unique In Order](#unique-in-order)
 
 
 
@@ -130,6 +131,8 @@ function likes(names) {
 
 ### Bit counting
 
+[Kata URL](https://www.codewars.com/kata/bit-counting/train/javascript)
+
 Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
 
 Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
@@ -139,5 +142,39 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 var countBits = function(n) {
   return n.toString(2).split("").filter(a => a !=="0").length;
 };
+
+```
+### Unique In Order
+
+[Kata URL](https://www.codewars.com/kata/unique-in-order/train/javascript)
+
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+
+uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+
+```javascript
+
+
+var uniqueInOrder=function(iterable){
+
+if(typeof(iterable)==="string"){
+  iterable = iterable.split("");
+}
+
+const placeholder = [];
+
+for (let i = 0; i < iterable.length; i++ ){
+  if(iterable[i] !== iterable[i+1]){
+      placeholder.push(iterable[i]);
+  }
+}
+
+return placeholder;
+
+}
 
 ```

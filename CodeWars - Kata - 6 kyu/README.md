@@ -5,7 +5,9 @@ List of my 6 kyu kata:
 - [Who likes it](#who-likes-it)
 - [Bit counting](#bit-counting)
 - [Unique In Order](#unique-in-order)
-
+- [Sum of Digits Digital Root](#sum-of-digits-digital-root)
+- [Find The Parity Outlier](#find-the-parity-outlier)
+- [Array.diff](#array.diff)
 
 
 ### Multiples of 3 or 5
@@ -174,6 +176,108 @@ for (let i = 0; i < iterable.length; i++ ){
 }
 
 return placeholder;
+
+}
+
+```
+### Sum of Digits Digital Root
+
+[KATA URL](https://www.codewars.com/kata/sum-of-digits-slash-digital-root/train/javascript)
+
+In this kata, you must create a digital root function.
+
+A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+Here's how it works (Ruby example given):
+
+digital_root(16)
+=> 1 + 6
+=> 7
+
+digital_root(942)
+=> 9 + 4 + 2
+=> 15 ...
+=> 1 + 5
+=> 6
+
+digital_root(132189)
+=> 1 + 3 + 2 + 1 + 8 + 9
+=> 24 ...
+=> 2 + 4
+=> 6
+
+```javascript
+
+function sum(arr){
+  return arr.reduce((a,b)=>parseInt(a)+ parseInt(b));
+}
+
+function digital_root(n) {
+  if(n<9){
+    return n;
+  }
+  while(n>9){
+    n = n.toString().split('');
+    n = sum(n);
+  }
+  
+  return n
+}
+
+```
+### Find The Parity Outlier
+
+[KATA URL](https://www.codewars.com/kata/find-the-parity-outlier/train/javascript)
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+```
+Examples
+[2, 4, 0, 100, 4, 11, 2602, 36]
+Should return: 11 (the only odd number)
+
+[160, 3, 1719, 19, 11, 13, -21]
+Should return: 160 (the only even number)
+```
+
+My soultion:
+```javascript
+
+function findOutlier(integers){
+
+const odd = integers.filter(a => a%2==0)
+
+return odd.length > 1 ? integers.filter(a => a%2!=0)[0] : odd[0];
+}
+
+```
+### Array.diff
+
+[KATA URL](https://www.codewars.com/kata/array-dot-diff/train/javascript)
+
+Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+It should remove all values from list a, which are present in list b.
+```
+array_diff([1,2],[1]) == [2]
+If a value is present in b, all of its occurrences must be removed from the other:
+
+array_diff([1,2,2,2,3],[2]) == [1,3]
+```
+
+```javascript
+
+function array_diff(a, b) {
+  let reduceMe = [];
+  
+  if(b.length === 0){
+    return a;
+  }
+  
+  for(let i = 0; i < b.length; i ++){
+    reduceMe = a.filter(x => x !== b[i] );
+    }
+  
+  return reduceMe;
 
 }
 

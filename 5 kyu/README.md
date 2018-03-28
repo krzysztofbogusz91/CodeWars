@@ -1,5 +1,5 @@
-List of my 6 kyu kata:
-	- [Simple Pig Latin](#simple-pig-latin)
+List of my 5 kyu kata:
+- [Simple Pig Latin](#simple-pig-latin)
 
 
 ### Simple Pig Latin 

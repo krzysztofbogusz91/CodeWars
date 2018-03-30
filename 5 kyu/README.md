@@ -1,6 +1,7 @@
 List of my 6 kyu kata:
 - [Simple Pig Latin](#simple-pig-latin)
 - [Moving Zeros To The End](#moving-zeros-to-the-end)
+- [Convert string to camel case](#convert-string-to-camel-case)
 
 
 ### Simple Pig Latin 
@@ -60,6 +61,43 @@ if(counter > 0){
   }
 }
  return arr;
+}
+
+```
+
+### Convert string to camel case
+
+[KATA URL](https://www.codewars.com/kata/convert-string-to-camel-case/train/javascript)
+
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+
+Examples:
+
+// returns "theStealthWarrior"
+toCamelCase("the-stealth-warrior") 
+
+// returns "TheStealthWarrior"
+toCamelCase("The_Stealth_Warrior")
+
+```javascript
+
+function toCamelCase(str){
+  if(str === ""){
+    return ""
+  }
+  
+  str = str.split("").map(a => a === "-" || a === "_" ? a = " " : a).join("").split(" ");
+  
+  return str.map((a, i)=>{
+    if(i > 0){
+      a = a.split("");
+      console.log(a);
+      a[0] = a[0].toUpperCase();
+      a = a.join("");
+      }
+    return a;
+  }).join("");
+
 }
 
 ```

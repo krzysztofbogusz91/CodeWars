@@ -2,6 +2,7 @@ List of my 6 kyu kata:
 - [Simple Pig Latin](#simple-pig-latin)
 - [Moving Zeros To The End](#moving-zeros-to-the-end)
 - [Convert string to camel case](#convert-string-to-camel-case)
+- [Human Readable Time](#human-readable-time)
 
 
 ### Simple Pig Latin 
@@ -98,6 +99,50 @@ function toCamelCase(str){
     return a;
   }).join("");
 
+}
+
+```
+
+### Human Readable Time
+
+[KATA URL](https://www.codewars.com/kata/human-readable-time/train/javascript)
+
+Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+
+HH = hours, padded to 2 digits, range: 00 - 99
+MM = minutes, padded to 2 digits, range: 00 - 59
+SS = seconds, padded to 2 digits, range: 00 - 59
+The maximum time never exceeds 359999 (99:59:59)
+
+You can find some examples in the test fixtures.
+
+```javascript
+
+function humanReadable(seconds) {
+const solution = {
+      h: "",
+      m: "",
+      s: ""
+}
+
+solution.h = Math.floor(seconds/3600).toString();
+
+//count left seconds
+seconds = seconds - (3600 * Math.floor(seconds/3600));
+
+solution.h.length > 1 ? solution.h : solution.h = "0" + solution.h
+
+solution.m = Math.floor(seconds/60).toString();
+
+seconds = seconds - (60 * Math.floor(seconds/60));
+
+solution.m.length > 1 ? solution.m : solution.m = "0" + solution.m
+
+solution.s = Math.floor(seconds).toString();
+
+solution.s.length > 1 ? solution.s : solution.s = "0" + solution.s
+
+ return `${solution.h}:${solution.m}:${solution.s}` ;
 }
 
 ```
